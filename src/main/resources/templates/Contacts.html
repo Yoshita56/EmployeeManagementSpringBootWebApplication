@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Contact Details</title>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Optional: link to a CSS file for styling -->
+</head>
+<body>
+<div align="center">
+    <div class="container">
+        <h1>Employee Contact Details</h1>
+
+        <!-- Employee Contact Information Section -->
+        
+        <div action="#" th:action="@{/save}" th:object="${employee}" method="post">
+            <!-- Header with Employee's Name and Department -->
+            <div class="header">
+                <h2 th:text="${employee.name}">Employee Name</h2>
+                <p><strong>Department:</strong> <span th:text="${employee.department}">Department</span></p>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="contact-details">
+                <p><strong>Phone Number:</strong> <span th:text="${employee.phone}">Phone Number</span></p>
+                <p><strong>Email:</strong> <a th:href="'mailto:' + ${employee.email}" th:text="${employee.email}">Email</a></p>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

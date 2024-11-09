@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>New Entry</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div align="center">
+    <h1>Create New Employee</h1>
+    <br />
+    <div class="col-sm-4">
+        <form action="#" th:action="@{/save}" th:object="${employee}" method="post">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="empName" class="form-label">Employee Name</label>
+                <input type="hidden" th:field="*{empID}" />
+                <input type="text" th:field="*{name}" id="empName" class="form-control" placeholder="Employee Name" />
+            </div>
+
+            <!-- Dept -->
+            <div class="form-group">
+                <label for="department" class="form-label">Department</label>
+                <input type="text" th:field="*{department}" id="dept" class="form-control" placeholder="Employee Department" />
+            </div>
+
+            <!-- Percentage -->
+            <div class="form-group">
+                <label for="salary" class="form-label">Monthly Salary</label>
+                <input type="text" th:field="*{salary}" id="salary" class="form-control" placeholder="Employee CTC" />
+            </div>
+
+ <!-- Phone Number -->
+            <div class="form-group">
+                <label for="phone" class="form-label">Mobile Number</label>
+                <input type="text" th:field="*{phone}" id="phone" class="form-control" placeholder="Employee Phone No." />
+            </div>
+            
+             <!-- Email -->
+            <div class="form-group">
+                <label for="email" class="form-label">Email ID</label>
+                <input type="text" th:field="*{email}" id="email" class="form-control" placeholder="Employee email" />
+            </div>
+
+            <br>
+            <button type="submit" class="btn btn-info">Save</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
